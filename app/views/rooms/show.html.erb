@@ -1,9 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @room.name %>
-</p>
+<h1> <%= @room.name %></h1>
 
 <%= link_to 'Edit', edit_room_path(@room) %> |
 <%= link_to 'Back', rooms_path %>
@@ -11,3 +8,16 @@
 <hr>
 
 
+<% @room.topics.each do |topic| %>
+  <div style="width: 30%; float: left; padding-right: 2%;">
+    <h2> <%= topic.name %></h2>
+
+    <%= link_to "New message", new_room_topic_message_path(@room, topic) %>
+
+    <hr>
+    <%= render topic.messages %>
+
+
+  </div>
+
+<% end %>
