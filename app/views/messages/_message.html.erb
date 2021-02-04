@@ -1,7 +1,6 @@
-<div>
-  <%= message.body %>
-
-  <%= link_to 'Edit', edit_room_topic_message_path(message.topic.room, message.topic, message) %> |
-  <%= link_to 'Delete', room_topic_message_path(message.topic.room, message.topic, message), method: :delete %>
-  <%#= link_to 'Back', messages_path %>
-</div>
+<%= turbo_frame_tag(dom_id(message), class: "message") do %>
+  <div>
+    <%= link_to 'Delete', room_topic_message_path(message.topic.room, message.topic, message), method: :delete %> |
+    <%= link_to message.body, edit_room_topic_message_path(message.topic.room, message.topic, message) %>
+  </div>
+<% end %>
