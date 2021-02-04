@@ -1,0 +1,15 @@
+current directory: /Users/acanfield/Projects/retromatic/vendor/bundle/ruby/2.6.0/gems/websocket-driver-0.7.3/ext/websocket-driver
+/Users/acanfield/.rbenv/versions/2.6.6/bin/ruby -I /Users/acanfield/.rbenv/versions/2.6.6/lib/ruby/2.6.0 -r ./siteconf20210203-28821-185ijzh.rb extconf.rb
+creating Makefile
+
+current directory: /Users/acanfield/Projects/retromatic/vendor/bundle/ruby/2.6.0/gems/websocket-driver-0.7.3/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /Users/acanfield/Projects/retromatic/vendor/bundle/ruby/2.6.0/gems/websocket-driver-0.7.3/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.bundle
+
+current directory: /Users/acanfield/Projects/retromatic/vendor/bundle/ruby/2.6.0/gems/websocket-driver-0.7.3/ext/websocket-driver
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 websocket_mask.bundle ./.gem.20210203-28821-zicqhe
