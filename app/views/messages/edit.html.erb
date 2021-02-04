@@ -1,5 +1,7 @@
 <h1>Editing Message</h1>
 
-<%= render 'form', message: @message %>
+<%= turbo_frame_tag(dom_id(@message)) do %>
+  <%= render 'form', message: @message %>
+<% end %>
 
 <%= link_to 'Back', room_path(@room) %>
