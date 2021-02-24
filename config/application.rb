@@ -18,5 +18,12 @@ module Retromatic
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+
+    # required for compatibility with Turbo
+    config.action_view.form_with_generates_remote_forms = false
+
+    # required to be able to reset forms
+    config.action_view.automatically_disable_submit_tag = false
   end
 end
