@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+
+
 <%= turbo_stream_from @room %>
 
 <h1> <%= @room.name %></h1>
@@ -9,19 +11,21 @@
 
 <hr>
 
-<% @room.topics.each do |topic| %>
-  <div style="width: 30%; float: left; padding-right: 2%;">
-    <h2> <%= topic.name %></h2>
+<div class='cols-3'>
+  <% @room.topics.each do |topic| %>
+    <div>
+      <h2> <%= topic.name %></h2>
 
-    <%= turbo_frame_tag "new_message", src: new_room_topic_message_path(@room, topic), target: "_top" %>
+      <%= turbo_frame_tag "new_message", src: new_room_topic_message_path(@room, topic), target: "_top" %>
 
-    <hr>
+      <hr>
 
-    <div id="<%= topic.snakecase %>">
-      <%= render topic.messages %>
+      <div id="<%= topic.snakecase %>">
+        <%= render topic.messages %>
+      </div>
+
+
     </div>
 
-
-  </div>
-
-<% end %>
+  <% end %>
+</div>

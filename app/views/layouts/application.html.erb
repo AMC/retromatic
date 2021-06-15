@@ -10,69 +10,27 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class='bubbles_background'>
-    <header>
-      <h1 class='retro_font'>
-        Retro Matic
-      </h1>
+  <body>
 
-      <h1 class='diner_font'>
-        Retromatic
-      </h1>
+
+    <header>
+      <div class="halo"></div>
+
+      <div class="vintage__container">
+        <p class="vintage vintage__top">Retromatic</p>
+        <p class="vintage vintage__bot">Retromatic</p>
+      </div>
     </header>
 
-    <nav>
-      <div style='background: #DE4B43;'>
-        Red
-      </div>
+<!--    <nav>-->
+<!--      Menu goes here-->
+<!--    </nav>-->
 
-      <div style='background: #EEAF00;'>
-        Yellow
-      </div>
-
-      <div style='background: #ED6A40;'>
-        Orange
-      </div>
-
-      <div style='background: #53929B;'>
-        Blue
-      </div>
-
-      <div style='background: #50B6AB;'>
-        Green
-      </div>
-
-      <div style='background: #724559;'>
-        Purple
-      </div>
-
-      <div style='background: #B4D3AA;'>
-        Light Green
-      </div>
-
-
-      <div style='background: #519D90;'>
-        Green
-      </div>
-
-      <div style='background: #75ACC0;'>
-        Light Blue
-      </div>
-
-      <div style='background: #898886;'>
-        Gray
-      </div>
-
-      <div style='background: #F2D8B3;'>
-        Biege
-      </div>
-
-    </nav>
-
-    <main>
-      <%= yield %>
-    </main>
-
+  <section>
+      <main>
+        <%= yield %>
+      </main>
+  </section>
 
     <footer>
 
