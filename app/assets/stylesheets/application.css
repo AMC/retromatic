@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require font_awesome5
  */
 
 @font-face {
@@ -109,7 +110,7 @@ header {
   padding-top: 0px;
   padding-bottom: 0px;
   text-align: center;
-  transform: matrix(1, -0.1, 0, 1, 0, 0);
+  /*transform: matrix(1, -0.1, 0, 1, 0, 0);*/
 }
 
 footer {
@@ -131,28 +132,17 @@ nav {
   /*font-variant: small-caps;*/
 }
 
-section {
-  background-color: #AAAAAA66;
-  width: 100%;
-  border-top: 3px solid #888;
-}
+
 
 main {
-  padding-top: 20px;
-  /*background-color: #15424fff;*/
-  /*background-image: radial-gradient(#15424f77, #15424f99);*/
-  /*background-color: radial-gradient(#AAAAAA, #BBBBBB);*/
-  /*z-index: 10;*/
-  /*border: 1px solid #000;*/
-  /*box-shadow: 2px 2px 5px black;*/
-  /*font-variant: small-caps;*/
-
 }
 
 div {
   padding: 10px;
   /*border-bottom: 3px solid white;*/
 }
+
+
 
 
 
@@ -200,6 +190,48 @@ div {
 
 .button_to {
   display: inline-block;
+}
+
+#icons button {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+
+#container {
+  background-color: #AAAAAA66;
+  width: 100%;
+  border-top: 3px solid #888;
+}
+
+section .title {
+  text-align: center;
+}
+section .title h1 {
+  color: #333;
+  text-align: center;
+  font-size: 40px;
+  text-shadow: 1px 1px 1px black;
+  display: inline-block;
+  font-family: 'Oswald'
+}
+
+section #icons {
+  text-align: center;
+  display: inline-block;
+  padding-right: 20px;
+  padding-left: 20px;
+  vertical-align: middle;
+  margin-top: -18px;
+}
+
+
+.fa-layers-counter  {
+  font-family: 'Open Sans';
+  color: rgb(240, 220, 200) !important;
+  background: radial-gradient(rgb(125, 25, 20), rgb(100, 25, 20)) !important;
+  text-shadow: 1px 1px 1px white;
 }
 
 

@@ -38,6 +38,13 @@ class RoomsController < ApplicationController
     end
   end
 
+  def reaction
+    reaction = params[:reaction]
+    room = Room.find(params[:room_id])
+    room.increment! reaction.pluralize
+    redirect_to room
+  end
+
   # PATCH/PUT /rooms/1 or /rooms/1.json
   def update
     respond_to do |format|

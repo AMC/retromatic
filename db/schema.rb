@@ -10,13 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_04_060620) do
+ActiveRecord::Schema.define(version: 2021_06_21_184106) do
+
+  create_table "comments", force: :cascade do |t|
+    t.text "body"
+    t.integer "message_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["message_id"], name: "index_comments_on_message_id"
+  end
 
   create_table "messages", force: :cascade do |t|
     t.text "body"
     t.integer "topic_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "likes"
     t.index ["topic_id"], name: "index_messages_on_topic_id"
   end
 
@@ -24,6 +33,9 @@ ActiveRecord::Schema.define(version: 2021_02_04_060620) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "likes"
+    t.integer "dislikes"
+    t.integer "mehs"
   end
 
   create_table "topics", force: :cascade do |t|
@@ -34,6 +46,7 @@ ActiveRecord::Schema.define(version: 2021_02_04_060620) do
     t.index ["room_id"], name: "index_topics_on_room_id"
   end
 
+  add_foreign_key "comments", "messages"
   add_foreign_key "messages", "topics"
   add_foreign_key "topics", "rooms"
 end

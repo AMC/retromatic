@@ -14,3 +14,5 @@ ActiveStorage.start()
 // import "controllers"
 
 import "controllers"
+
+import "@fortawesome/fontawesome-free/css/all"
