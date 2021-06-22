@@ -1,6 +1,27 @@
-<%= turbo_frame_tag(dom_id(message), class: "message") do %>
-  <div>
-    <%= button_to 'Delete', room_topic_message_path(message.topic.room, message.topic, message), method: :delete %>
-    <%= link_to message.body, edit_room_topic_message_path(message.topic.room, message.topic, message) %>
+<%= turbo_frame_tag(dom_id(message)) do %>
+  <div class='message speech-bubble'>
+    <div class='actions'>
+      <%= button_to room_topic_message_path(message.topic.room, message.topic, message), method: :delete, class: "btn btn-red hidden" do %>
+        <i class='fas fa-times'></i>
+      <% end %>
+
+      <%= link_to edit_room_topic_message_path(message.topic.room, message.topic, message), class: "btn btn-green hidden" do %>
+        <i class='fas fa-edit'></i>
+      <% end %>
+
+      <%= button_to room_topic_message_like_path(message.topic.room, message.topic, message), class: "btn btn-like" do %>
+        <i class='fas fa-inverse fa-thumbs-up'></i>
+        <%= message.likes || 0 %>
+      <% end %>
+    </div>
+
+
+
+    <div class='content'>
+      <%= message.body %>
+    </div>
+
+
+
   </div>
 <% end %>

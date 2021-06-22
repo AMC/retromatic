@@ -11,11 +11,12 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div>
     <%= form.text_area :body %>
+
+    <%= form.button type: :submit, class: 'btn btn-green' do %>
+      <i class='fas fa-plus'></i>
+    <% end %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>

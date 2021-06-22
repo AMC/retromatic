@@ -41,12 +41,10 @@
 
 <div class='cols-3'>
   <% @room.topics.each do |topic| %>
-    <div>
+    <div class='topic'>
       <h2> <%= topic.name %></h2>
 
       <%= turbo_frame_tag "new_message", src: new_room_topic_message_path(@room, topic), target: "_top" %>
-
-      <hr>
 
       <div id="<%= topic.snakecase %>">
         <%= render topic.messages %>

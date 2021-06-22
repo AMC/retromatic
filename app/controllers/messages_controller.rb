@@ -60,6 +60,12 @@ class MessagesController < ApplicationController
     end
   end
 
+  def like
+    message = Message.find(params[:message_id])
+    message.increment! :likes
+    redirect_to message.room
+  end
+
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_message
