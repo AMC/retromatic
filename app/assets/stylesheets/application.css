@@ -258,7 +258,11 @@ main {
 .topic .actions {
   padding-top: 5px;
   text-align: right;
-  margin-right: 2px;
+
+}
+
+.topic .actions .btn {
+  margin-left: 7px;
 }
 .hidden {
   visibility: hidden;

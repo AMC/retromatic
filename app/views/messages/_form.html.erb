@@ -16,7 +16,12 @@
   </div>
 
   <div class="actions">
-    <%= form.button type: :submit, class: 'btn btn-green' do %>
+    <% if @topic.name == 'Shoutouts' %>
+      <a target="_blank" href='https://federate.f5.com/f5-w-68747470733a2f2f696e7472616e65742d617070732e66356e65742e636f6d$$/Recognition/shout-out' class='btn'>
+        <i class='fas fa-trophy'></i> F5 Shoutout
+      </a>
+    <% end %>
+    <%= form.button type: :submit, class: 'btn' do %>
       <i class='fas fa-plus'></i> Comment
     <% end %>
   </div>
