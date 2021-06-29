@@ -87,7 +87,12 @@
   src: url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2) format('woff2');
 }
 
+html {
+  height: 100%;
+}
+
 body {
+  min-height: 100%;
   margin: 0;
   background-image: radial-gradient(transparent, rgba(0, 0, 0, 0.6)), url('full-bloom.png');
   /*background-image: radial-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5));*/
