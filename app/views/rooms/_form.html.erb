@@ -11,12 +11,10 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
+  <div class="field" style="margin-top: 20px;">
     <%= form.text_field :name %>
+
+    <%= form.submit "Create"%>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>
