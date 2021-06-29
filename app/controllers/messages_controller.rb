@@ -62,8 +62,14 @@ class MessagesController < ApplicationController
 
   def like
     message = Message.find(params[:message_id])
-    message.increment! :likes
-    redirect_to message.room
+    message.update(likes: message.likes + 1)
+    respond_to do |format|
+      format.turbo_stream do
+        render turbo_stream: turbo_stream.replace(:message, partial: "message", locals: {message: message})
+      end
+    end
+
+
   end
 
   private

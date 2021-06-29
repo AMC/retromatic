@@ -41,9 +41,15 @@ class RoomsController < ApplicationController
   def reaction
     reaction = params[:reaction]
     room = Room.find(params[:room_id])
-    room.increment! reaction.pluralize
-    redirect_to room
+    room.update(likes: room.likes + 1)
+
+    respond_to do |format|
+      format.turbo_stream do
+        render turbo_stream: turbo_stream.replace("icons", partial: "reactions", locals: {room: room})
+      end
+    end
   end
+
 
   # PATCH/PUT /rooms/1 or /rooms/1.json
   def update
