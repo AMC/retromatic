@@ -14,23 +14,17 @@
 
 
     <header>
-      <div class="halo"></div>
-
-      <div class="vintage__container">
-        <p class="vintage vintage__top">Retromatic</p>
-        <p class="vintage vintage__bot">Retromatic</p>
+      <div class="logo_container">
+        <%= link_to root_path do %>
+          <p class="logo logo_top">Retromatic</p>
+          <p class="logo logo_bot">Retromatic</p>
+        <% end %>
       </div>
     </header>
 
-<!--    <nav>-->
-<!--      Menu goes here-->
-<!--    </nav>-->
-
-  <section id='container'>
     <main>
       <%= yield %>
     </main>
-  </section>
 
     <footer>
 

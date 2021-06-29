@@ -1,6 +1,6 @@
 <%= turbo_frame_tag 'reactions' do %>
   <section id='icons'>
-    <%= button_to room_reaction_path(room), method: :post, params: {reaction: :like} do %>
+    <%= button_to room_reaction_path(room), method: :post, params: {reaction: :dislike} do %>
       <span class="fa-stack fa-2x">
         <i class="fas fa-square fa-stack-2x"></i>
         <i class="fas fa-angry fa-inverse fa-stack-1x"></i>
@@ -20,7 +20,7 @@
       </span>
     <% end %>
 
-    <%= button_to room_reaction_path(room), method: :post, params: {reaction: :dislike} do %>
+    <%= button_to room_reaction_path(room), method: :post, params: {reaction: :like} do %>
       <span class="fa-stack fa-2x">
         <i class="fas fa-square fa-stack-2x"></i>
         <i class="fas fa-grin fa-inverse fa-stack-1x"></i>

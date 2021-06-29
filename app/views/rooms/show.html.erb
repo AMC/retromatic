@@ -1,9 +1,8 @@
 <%= turbo_stream_from @room %>
 
 <section class='title'>
-  <%= render partial: "reactions", locals: {room: @room} %>
-
   <h1> <%= @room.name %></h1>
+  <%= render partial: "reactions", locals: {room: @room} %>
 </section>
 
 <div class='cols-3'>
