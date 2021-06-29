@@ -62,7 +62,9 @@ class MessagesController < ApplicationController
 
   def like
     message = Message.find(params[:message_id])
-    message.update(likes: message.likes + 1)
+    message.increment! :likes
+    message.touch # increment does not trigger callbacks
+
     respond_to do |format|
       format.turbo_stream do
         render turbo_stream: turbo_stream.replace(:message, partial: "message", locals: {message: message})

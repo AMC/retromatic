@@ -39,9 +39,10 @@ class RoomsController < ApplicationController
   end
 
   def reaction
-    reaction = params[:reaction]
+    reaction = params[:reaction].pluralize
     room = Room.find(params[:room_id])
-    room.update(likes: room.likes + 1)
+    room.increment! reaction
+    room.touch # increment does not trigger callback
 
     respond_to do |format|
       format.turbo_stream do
