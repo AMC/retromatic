@@ -8,8 +8,8 @@ This app is a retro board where users can reflect on the prior sprint.
 
 1. `brew install sqlite3`
 2. `bundle install`
-3. `rails db:create db:migrate`
-4. `rails s`
+3. `bundle exec rails db:create db:migrate`
+4. `bundle exec rails s`
 
 
 ## Usage
